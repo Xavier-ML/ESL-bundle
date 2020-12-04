@@ -173,6 +173,18 @@
   </autotools>
   <!-- OMM Bundle END -->
 
+  <cmake id="dftbplus" use-ninja="no" cmakeargs='-DCMAKE_INSTALL_PREFIX=$JHBUILD_PREFIX -DWITH_API=True -DWITH_MPI=False'>
+    <branch repo="local" module="DFTB+-20.2.tar.gz" version="20.2" checkoutdir="dftbplus-20.2" hash="md5:bec0f7f133654f7b8cc9a6381afa3ced">
+      <patch file="dftbplus_cmake_version.patch" strip="0"/>
+    </branch>
+  </cmake>
+
+  <cmake id="dftbplus-mpi" use-ninja="no" cmakeargs='-DCMAKE_INSTALL_PREFIX=$JHBUILD_PREFIX -DWITH_API=True -DWITH_MPI=True'>
+    <branch repo="local" module="DFTB+-20.2.tar.gz" version="20.2" checkoutdir="dftbplus-20.2-mpi" hash="md5:bec0f7f133654f7b8cc9a6381afa3ced">
+      <patch file="dftbplus_cmake_version.patch" strip="0"/>
+    </branch>
+  </cmake>
+
   <autotools id="fakepc" autogen-sh="configure">
     <branch repo="local" module="fakepc-0.2.1.tar.gz" version="0.2.1" hash="md5:da1b8210df02431f727c712483d69fcd"/>
     <dependencies>
@@ -212,6 +224,7 @@
       <dep package="spglib"/>
       <dep package="wannier90"/>
       <dep package="else_rci"/>
+      <dep package="dftbplus"/>
     </dependencies>
   </metamodule>
 
@@ -235,6 +248,7 @@
       <dep package="spglib"/>
       <dep package="wannier90-mpi"/>
       <dep package="else_rci"/>
+      <dep package="dftbplus-mpi"/>
     </dependencies>
   </metamodule>
 
