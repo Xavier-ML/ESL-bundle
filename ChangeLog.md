@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - ELSI to v2.7.1.
+- Libmdb v0.12.1.
 
 ## [0.6.1-1] - To be released
 
